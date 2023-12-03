@@ -9,9 +9,23 @@ pub fn read_string(year: i32, day: i32) -> String {
         .trim()
         .to_string();
 }
+pub fn read_string_test(year: i32, day: i32) -> String {
+    let path = format!("src/y{}/d{:0>2}/dummy_input.txt", year, day);
+    println!("{}", path);
+    return read_to_string(path)
+        .expect("Couldn't read file")
+        .trim()
+        .to_string();
+}
 
 pub fn read_lines(year: i32, day: i32) -> Vec<String> {
     return read_string(year, day)
+        .lines()
+        .map(|l| l.trim().to_string())
+        .collect();
+}
+pub fn read_lines_test(year: i32, day: i32) -> Vec<String> {
+    return read_string_test(year, day)
         .lines()
         .map(|l| l.trim().to_string())
         .collect();
@@ -98,6 +112,5 @@ pub fn regex_parse_matches_as_i32(s: String, regex_s: &str) -> Vec<i32> {
 }
 
  */
-
 
 //credit to https://github.com/JonasssC/AoC-Rust/blob/main/src/lib.rs
