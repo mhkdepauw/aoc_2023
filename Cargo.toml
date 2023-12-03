@@ -12,5 +12,10 @@ path = "src/y2022/d01/main.rs"
 name = "y2023d01"
 path = "src/y2023/d01/main.rs"
 
+[[bin]]
+name = "y2023d02"
+path = "src/y2023/d02/main.rs"
+
 [dependencies]
 regex = "1.10.2"
+num = "0.4.1"

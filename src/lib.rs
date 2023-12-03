@@ -78,4 +78,26 @@ pub fn regex_parse_as_i32(s: &str, regex_s: &str) -> Vec<i32> {
         .map(|m| m.parse::<i32>().unwrap())
         .collect();
 }
+/*
+pub fn regex_parse_matches_i32(s: String, regex_s: &str) -> Vec<i32> {
+    let re = Regex::new(regex_s).expect("Invalid RegEx");
+    let mut vec:Vec<i32> = vec![];
+    for (_, [first, second]) in re.captures_iter(s.as_str()).map(|c| c.extract()) {
+        vec.push(second.parse::<i32>().expect("Parse error"));
+    }
+    return vec;
+}
+
+ */
+/*
+pub fn regex_parse_matches_as_i32(s: String, regex_s: &str) -> Vec<i32> {
+    return regex_parse_matches(s, regex_s)
+        .iter()
+        .map(|m| m.parse::<i32>().unwrap())
+        .collect();
+}
+
+ */
+
+
 //credit to https://github.com/JonasssC/AoC-Rust/blob/main/src/lib.rs
